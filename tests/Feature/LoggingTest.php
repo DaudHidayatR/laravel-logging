@@ -34,6 +34,15 @@ class LoggingTest extends TestCase
         Log::info("Hello Info");
 
         self::assertTrue(true);
-
     }
+
+    public function testChannel()
+    {
+        $selectLogger = Log::channel('slack');
+        $selectLogger->error("Hello Slack");
+
+        Log::info("Hello Info");
+        self::assertTrue(true);
+    }
+
 }
